@@ -1,0 +1,52 @@
+{
+	"name": "workout-calendar",
+	"version": "1.0.1",
+	"description": "workout calendar, to keep track of your progress",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/icon.icns --prune=true --out=release-builds",
+		"package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Workout Calendar\"",
+		"package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/icon.png --prune=true --out=release-builds",
+		"package-all": "npm run package-mac && npm run package-win && npm run package-linux",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder"
+	},
+	"author": "artinlines",
+	"license": "MIT",
+	"build": {
+		"afterSign": "notarize/notarize.js",
+		"appId": "com.artinlines.workout-calendar",
+		"productName": "Workout Calendar",
+		"directories": {
+			"output": "dist"
+		},
+		"mac": {
+			"category": "public.app-category.productivity",
+			"target": "dmg",
+			"icon": "assets/icons/icon.icns",
+			"type": "distribution",
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"entitlements": "entitlements/entitlements.mac.plist",
+			"entitlementsInherit": "entitlements/entitlements.mac.plist"
+		},
+		"dmg": {
+			"backgroundColor": "#333333",
+			"sign": false
+		}
+	},
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"electron-store": "^5.2.0",
+		"mongoose": "^5.9.18",
+		"node-fetch": "^2.6.0"
+	},
+	"devDependencies": {
+		"electron": "^9.0.4",
+		"electron-builder": "^22.7.0",
+		"electron-compile": "^6.4.4",
+		"electron-notarize": "^1.0.0",
+		"electron-packager": "^14.2.1"
+	}
+}

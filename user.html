@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/icons/icon.ico" type="image/x-icon">
+    <title>Workout Calendar</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calContainer">
+            <div>
+
+                <div class="calHead">
+                    <button class="previous round" id="previous" onclick="previous()">&#8249;</button>
+
+                    <h1 id="monthAndYear"></h1>
+
+                    <button class="next round" id="next" onclick="next()">&#8250;</button>
+                </div>
+
+                <div id="selects">
+
+                    <div class="selectDiv" id="monthSelect">
+                        <label for="month">Month:</label>
+                        <select class="select" name="month" id="month" onchange="jump()">
+                            <option value="0">Jan</option>
+                            <option value="1">Feb</option>
+                            <option value="2">Mar</option>
+                            <option value="3">Apr</option>
+                            <option value="4">May</option>
+                            <option value="5">Jun</option>
+                            <option value="6">Jul</option>
+                            <option value="7">Aug</option>
+                            <option value="8">Sep</option>
+                            <option value="9">Oct</option>
+                            <option value="10">Nov</option>
+                            <option value="11">Dec</option>
+                        </select>
+                    </div>
+
+                    <div id="yearSelect" class="selectDiv">
+                        <label for="year">Year:</label>
+                        <select class="select" name="year" id="year">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                            <option value="2034">2034</option>
+                            <option value="2035">2035</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </thead>
+
+                <tbody id="calBody"></tbody>
+            </table>
+        </div>
+
+        <div>
+            <p id="text"></p>
+        </div>
+    </div>
+
+    <p id="userName" style="display: none;">{{DATA}}</p>
+    <script src="./assets/js/user.js"></script>
+</body>
+
+</html>

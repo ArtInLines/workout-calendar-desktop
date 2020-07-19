@@ -1,0 +1,57 @@
+* {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: max-content;
+	padding: 15px;
+}
+
+nav > h3 {
+	text-align: center;
+	font-size: 2rem;
+	padding: 10px 0 5px 0;
+}
+
+nav > code {
+	text-align: center;
+	padding: 5px;
+	text-decoration: underline;
+	font-size: 1.3rem;
+}
+
+nav {
+	margin: 10px 0 35px 0;
+}
+
+label {
+	font-size: 1.1rem;
+	margin: 5px;
+}
+
+.input {
+	margin: 5px;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #333;
+	text-align: center;
+	width: 15rem;
+	font-size: 1.2rem;
+}
+
+#registerBtn {
+	margin: 35px;
+}

@@ -1,4 +1,4 @@
-# Workout-Calendar
+# Workout-Calendar-desktop
 
 ### Version:
 
